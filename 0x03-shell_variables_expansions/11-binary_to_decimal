@@ -1,1 +1,2 @@
-y#!/bin/bash
+#!/bin/bash
+echo $((BINARY % 2))
