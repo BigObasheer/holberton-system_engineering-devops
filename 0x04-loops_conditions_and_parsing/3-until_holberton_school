@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Bash script that prints out "Holberton School" using until
 
-i=0
+i=1
 until [ $i -gt 10 ]
 do
 	echo "Holberton School"
