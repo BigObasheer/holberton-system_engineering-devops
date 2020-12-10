@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# Nginx server so that /redirect_me is redirecting to another page
-
-sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo mkdir -p /var/www/html
-sudo echo "Holberton School" > /var/www/html/index.html
-sudo sed -i '/^\tserver_name.*/a \\trewrite ^\/redirect_me https:\/\/usmanjabbar.com permanent;' /etc/nginx/sites-available/default
-sudo service nginx restart
