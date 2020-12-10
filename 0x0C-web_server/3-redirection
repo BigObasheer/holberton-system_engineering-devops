@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Nginx server so that /redirect_me
+# Nginx server so that it redirects /redirect_me
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo mkdir -p /var/www/html
 sudo echo "Holberton School" > /var/www/html/index.html
-sudo sed -i '/^\tserver_name.*/a \\trewrite ^\/redirect_me https:\/\/google.com;' /etc/nginx/sites-available/default
+sudo sed -i '/^\tserver_name.*/a \\trewrite ^\/redirect_me https:\/\/osamabasheer.me permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart
