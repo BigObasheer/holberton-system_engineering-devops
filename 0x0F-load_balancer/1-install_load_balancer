@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# sets up HAProxy(Load Balancing) servers
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+sudo sed -i "9i ENABLED=1" /etc/default/haproxy
+cat >> /etc/haproxy/haproxy.cfg << EOF
+frontend haproxynode
+    bind *:80
+    mode http
+    default_backend backendnodes
+backend backendnodes
+    balance roundrobin
+    server 83-web-01 35.196.153.56:80 check
+    server 83-web-02 34.73.85.88:80 check
+EOF
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+sudo service haproxy restart
