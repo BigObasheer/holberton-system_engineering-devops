@@ -14,6 +14,4 @@ backend backendnodes
     server 83-web-02 34.73.85.88:80 check
 EOF
 
-echo "ENABLED=1" >> /etc/default/haproxy
-
 sudo service haproxy restart
